@@ -49,9 +49,10 @@ apps:
     plugs: [ home, removable-media ]
 
 slots:
-  quake-toolkit:
-    content: executables
-    read: 
+  quake-modtools:
+    content: quake-modtools
+    interface: content
+    read:
       - $SNAP/bin
 
 parts:
