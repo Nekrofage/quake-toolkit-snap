@@ -67,6 +67,12 @@ parts:
       - cmake
       - build-essential
       - groff
+    stage:
+      - bin/qbsp
+      - bin/light
+      - bin/vis
+      - bin/bspinfo
+      - bin/bsputil
 
   q1-qcc:
     source: https://github.com/kasymovga/fteqcc
