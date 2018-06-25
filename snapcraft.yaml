@@ -14,39 +14,39 @@ confinement: strict
 apps:
   qbsp:
     command: qbsp
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   light:
     command: light
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   vis:
     command: vis
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   bspinfo:
     command: bspinfo
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   bsputil:
     command: bsputil
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   
   fteqcc:
     command: fteqcc
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   
   qbsp3:
     command: qbsp3
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   qdata:
     command: qdata
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   qrad3:
     command: qrad3
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   qvis3:
     command: qvis3
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
   bspinfo3:
     command: bspinfo3
-    plugs: [ home. removable-media ]
+    plugs: [ home, removable-media ]
 
 slots:
   quake-toolkit:
