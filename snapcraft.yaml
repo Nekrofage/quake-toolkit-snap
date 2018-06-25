@@ -1,0 +1,99 @@
+name: quake-toolkit
+version: 0.1
+#grade: stable
+summary: Collection of CLI modding tools for Quake-engine based games.
+description: |
+  The Quake Toolkit package provides CLI tools required by Quake map creators and modders.
+  This snap includes:
+    - ericw-tools for Quake/Hexen 2 (qbsp, light, vis, bspinfo, bsputil)
+    - FTEQCC QuakeC compiler
+    - Quake II maptools (qbsp3, qdata, qrad3, qvis3, bspinfo3)
+
+confinement: strict
+
+apps:
+  qbsp:
+    command: qbsp
+    plugs: [ home. removable-media ]
+  light:
+    command: light
+    plugs: [ home. removable-media ]
+  vis:
+    command: vis
+    plugs: [ home. removable-media ]
+  bspinfo:
+    command: bspinfo
+    plugs: [ home. removable-media ]
+  bsputil:
+    command: bsputil
+    plugs: [ home. removable-media ]
+  
+  fteqcc:
+    command: fteqcc
+    plugs: [ home. removable-media ]
+  
+  qbsp3:
+    command: qbsp3
+    plugs: [ home. removable-media ]
+  qdata:
+    command: qdata
+    plugs: [ home. removable-media ]
+  qrad3:
+    command: qrad3
+    plugs: [ home. removable-media ]
+  qvis3:
+    command: qvis3
+    plugs: [ home. removable-media ]
+  bspinfo3:
+    command: bspinfo3
+    plugs: [ home. removable-media ]
+
+slots:
+  quake-toolkit:
+    content: executables
+    read: 
+      - $SNAP/bin
+
+parts:
+  q1-maptools:
+    source: https://github.com/ericwa/ericw-tools
+    source-type: git
+    source-tag: v0.18.1
+    plugin: cmake
+    build-packages:
+      - git
+      - cmake
+      - build-essential
+      - groff
+
+  q1-qcc:
+    source: https://github.com/kasymovga/fteqcc
+    source-type: git
+    plugin: make
+    artifacts:
+      - fteqcc.bin
+    organize:
+      fteqcc.bin: bin/fteqcc
+    build-packages:
+      - make
+      - build-essential
+
+  q2-maptools:
+    source: https://github.com/beidl/maptools
+    source-type: git
+    plugin: make
+    artifacts:
+      - release/bspinfo
+      - release/qbsp3
+      - release/qdata
+      - release/qrad3
+      - release/qvis3
+    organize:
+      release/bspinfo: bin/bspinfo3
+      release/qbsp3: bin/
+      release/qdata: bin/
+      release/qrad3: bin/
+      release/qvis3: bin/
+    build-packages:
+      - make
+      - build-essential

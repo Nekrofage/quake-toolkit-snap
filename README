@@ -1,0 +1,6 @@
+The Quake Toolkit package provides CLI tools required by Quake map creators and modders.
+
+This snap includes:
+  - ericw-tools for Quake/Hexen 2 (qbsp, light, vis, bspinfo, bsputil)
+  - FTEQCC QuakeC compiler
+  - Quake II maptools (qbsp3, qdata, qrad3, qvis3, bspinfo3)
