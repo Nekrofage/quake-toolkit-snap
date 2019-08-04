@@ -10,6 +10,18 @@ description: |
     - Quake II maptools (qbsp3, qdata, qrad3, qvis3, bspinfo3)
 
 confinement: strict
+architectures:
+  - build-on: amd64
+    run-on: amd64
+    
+  - build-on: i386
+    run-on: i386
+
+  - build-on: armhf
+    run-on: armhf
+    
+  - build-on: arm64
+    run-on: arm64
 
 apps:
   qbsp:
